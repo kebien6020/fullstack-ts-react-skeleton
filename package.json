@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "build-server-js": "tsc -p server",
+    "watch-server-js": "yarn build-server-js -- -w",
+    "start-server": "node server/dist/index.js",
+    "start-server-autoreload": "nodemon server/dist/index.js -w server/dist",
+    "dev-server": "npm-run-all -p watch-server-js start-server-autoreload",
+    "build-client-js": "webpack --config client/webpack.config.js",
+    "watch-client-js": "yarn build-client-js -- -w",
+    "dev": "npm-run-all -p dev-server watch-client-js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/react": "^16.0.36",
+    "@types/react-dom": "^16.0.3",
+    "awesome-typescript-loader": "^3.4.1",
+    "nodemon": "^1.14.12",
+    "npm-run-all": "^4.1.2",
+    "typescript": "^2.7.1",
+    "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
